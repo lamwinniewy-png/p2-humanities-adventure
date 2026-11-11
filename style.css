@@ -29,7 +29,7 @@ img{max-width:100%;display:block}
 .hero-m.m1{left:2%}.hero-m.m2{right:2%}
 .sec{font-family:var(--kai);font-size:26px;text-align:center;margin:22px 0 12px}
 .zones{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
-.zone{background:#fff;border-radius:24px;overflow:hidden;border:3px solid var(--c);box-shadow:0 6px 0 var(--c);text-align:left;transition:transform .15s}
+.zone{display:flex;flex-direction:column;justify-content:flex-start;align-items:stretch;background:#fff;border-radius:24px;overflow:hidden;border:3px solid var(--c);box-shadow:0 6px 0 var(--c);text-align:left;transition:transform .15s}
 .zone:active{transform:translateY(4px);box-shadow:0 2px 0 var(--c)}
 .zone img{aspect-ratio:1;object-fit:cover;width:100%}
 .zt{padding:10px 14px 12px}
@@ -57,7 +57,7 @@ img{max-width:100%;display:block}
 .zhead .lesson{margin:0;font-size:22px;font-weight:700}
 .modes{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0}
 .modes.one{grid-template-columns:1fr;max-width:420px;margin:18px auto}
-.mode{background:#fff;border:3px solid var(--c);border-radius:24px;padding:18px 12px;box-shadow:0 6px 0 var(--c);display:flex;flex-direction:column;align-items:center;gap:2px}
+.mode{justify-content:flex-start;background:#fff;border:3px solid var(--c);border-radius:24px;padding:18px 12px;box-shadow:0 6px 0 var(--c);display:flex;flex-direction:column;align-items:center;gap:2px}
 .mode:active{transform:translateY(4px);box-shadow:0 2px 0 var(--c)}
 .mi{font-size:46px}.mode b{font-size:24px;font-family:var(--kai)}.mode small{color:var(--mut);font-size:15px}
 .tipbox{display:flex;align-items:center;gap:14px;background:#fff;border-radius:22px;padding:12px 18px;border:2px dashed var(--line);margin:16px 0}
