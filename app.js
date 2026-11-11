@@ -82,7 +82,7 @@ function home() {
       <img src="${z.img}" alt="">
       <div class="zt"><b>${z.name}</b><small>${z.lesson}</small>${starsOf(z.id)}</div></button>`).join('')}
     <button class="zone boss" data-boss="1"><img src="img/z-boss.webp" alt="">
-      <div class="zt"><b>終極挑戰城堡</b><small>綜合模擬 · 20題 · 30分鐘</small>${starsOf('boss')}</div></button>
+      <div class="zt"><b>挑戰城堡</b><small>綜合模擬 · 20題 · 30分鐘</small>${starsOf('boss')}</div></button>
   </div>
   <div class="extras">
     <button class="pill-btn" id="wrongBtn">📒 錯題本 <b>${S.wrong.length}</b></button>
@@ -167,7 +167,7 @@ function learn(id, i) {
 function bossIntro() {
   view(`${backBar('小鎮地圖')}
   <section class="zhead boss-h" style="--c:#E0A21A"><img src="img/z-boss.webp" alt="">
-    <div><p class="unit">綜合模擬</p><h1>終極挑戰城堡</h1><p class="lesson">第3、4、5課 ＋ 已有知識 · 20 題</p>${starsOf('boss')}</div></section>
+    <div><p class="unit">綜合模擬</p><h1>挑戰城堡</h1><p class="lesson">第3、4、5課 ＋ 已有知識 · 20 題</p>${starsOf('boss')}</div></section>
   <div class="tipbox"><img src="img/susu-think.webp" alt=""><p>真正評估有 30 分鐘。這裏也有 30 分鐘計時，試試在時間內完成！每次題目都不同。</p></div>
   <div class="modes one"><button class="mode big" id="startBoss" style="--c:#E0A21A"><span class="mi">🏰</span><b>開始挑戰</b><small>計時 30 分鐘</small></button></div>`);
   bindBack(home);
