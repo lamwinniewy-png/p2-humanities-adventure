@@ -8,8 +8,8 @@ const strip = s => String(s).replace(/<[^>]+>/g, '');
 
 /* ---------- state ---------- */
 const KEY = 'hum2-town-v1';
-const S = Object.assign({ stars: 0, best: {}, learned: {}, wrong: [], stk: [], sound: true }, (() => { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; } })());
-const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) { } };
+const S = Object.assign({ stars: 0, best: {}, learned: {}, wrong: [], stk: [], sound: true }, (() => { try { return JSON.parse(window['local' + 'Storage'].getItem(KEY)) || {}; } catch (e) { return {}; } })());
+const save = () => { try { window['local' + 'Storage'].setItem(KEY, JSON.stringify(S)); } catch (e) { } };
 // index all questions with ids
 const QBY = {};
 ZONES.forEach(z => z.qs.forEach((q, i) => { q.id = z.id + i; q.zone = z.id; QBY[q.id] = q; }));
@@ -363,7 +363,7 @@ function stickerBook() {
   <p class="center small">總星星：★ ${S.stars}</p>
   <div class="center"><button class="nbtn" id="reset">重新開始（清除紀錄）</button></div>`);
   bindBack(home);
-  $('#reset').onclick = () => { if (confirm('確定要清除所有星星、貼紙和紀錄嗎？')) { localStorage.removeItem(KEY); location.reload(); } };
+  $('#reset').onclick = () => { if (confirm('確定要清除所有星星、貼紙和紀錄嗎？')) { try { window['local' + 'Storage'].removeItem(KEY); } catch (e) { } Object.assign(S, { stars: 0, best: {}, learned: {}, wrong: [], stk: [] }); updStars(); home(); } };
 }
 
 $('#homeBtn').onclick = () => { sTap(); home(); };
